@@ -1,0 +1,14 @@
+C:\Users\diazl\source\repos\Chapter2\Vocabulary\bin\Debug\net8.0\Vocabulary.exe
+C:\Users\diazl\source\repos\Chapter2\Vocabulary\bin\Debug\net8.0\Vocabulary.deps.json
+C:\Users\diazl\source\repos\Chapter2\Vocabulary\bin\Debug\net8.0\Vocabulary.runtimeconfig.json
+C:\Users\diazl\source\repos\Chapter2\Vocabulary\bin\Debug\net8.0\Vocabulary.dll
+C:\Users\diazl\source\repos\Chapter2\Vocabulary\bin\Debug\net8.0\Vocabulary.pdb
+C:\Users\diazl\source\repos\Chapter2\Vocabulary\obj\Debug\net8.0\Vocabulary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\diazl\source\repos\Chapter2\Vocabulary\obj\Debug\net8.0\Vocabulary.AssemblyInfoInputs.cache
+C:\Users\diazl\source\repos\Chapter2\Vocabulary\obj\Debug\net8.0\Vocabulary.AssemblyInfo.cs
+C:\Users\diazl\source\repos\Chapter2\Vocabulary\obj\Debug\net8.0\Vocabulary.csproj.CoreCompileInputs.cache
+C:\Users\diazl\source\repos\Chapter2\Vocabulary\obj\Debug\net8.0\Vocabulary.dll
+C:\Users\diazl\source\repos\Chapter2\Vocabulary\obj\Debug\net8.0\refint\Vocabulary.dll
+C:\Users\diazl\source\repos\Chapter2\Vocabulary\obj\Debug\net8.0\Vocabulary.pdb
+C:\Users\diazl\source\repos\Chapter2\Vocabulary\obj\Debug\net8.0\Vocabulary.genruntimeconfig.cache
+C:\Users\diazl\source\repos\Chapter2\Vocabulary\obj\Debug\net8.0\ref\Vocabulary.dll
