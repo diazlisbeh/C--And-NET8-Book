@@ -1,4 +1,3 @@
-using System.Flags;
 namespace Packt.Shared;
 
 [Flags]
