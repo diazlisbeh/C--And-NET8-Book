@@ -1,7 +1,7 @@
 namespace Packt.Shared;
 
 public class Passenger{
-    public string? Name{get;set}
+    public string? Name{get;set;}
 }
 
 public class BusinessClassPassenger : Passenger{
@@ -10,10 +10,11 @@ public class BusinessClassPassenger : Passenger{
     }
 }
 
-public class FirstClassPassenger : Passenger{
+public class FirstClassPassenger : Passenger
+{
     public int AirMiles {get;set;}
     public override string ToString(){
-        return $"First Class with {AirMiles:N0} air miles: {Name}"'
+        return $"First Class with {AirMiles:N0} air miles: {Name}";
     }
 }
 public class CoachClassPassenger : Passenger

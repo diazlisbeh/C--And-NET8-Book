@@ -1,4 +1,5 @@
 ﻿using Packt.Shared;
+using PacktLibraryModern;
 
 ConfigureConsole();
 
@@ -28,7 +29,7 @@ Passenger[] passengers = {
   new FirstClassPassenger { AirMiles = 16_562, Name = "Lucy" },
   new BusinessClassPassenger { Name = "Janice" },
   new CoachClassPassenger { CarryOnKG = 25.7, Name = "Dave" },
-  new CoachClassPassenger { CarryOnKG = 0, Name = "Amit" },
+  new CoachClassPassenger { CarryOnKG = 0, Name = "Amit" }
 };
 
 foreach(Passenger pass in passengers){
@@ -42,6 +43,40 @@ foreach(Passenger pass in passengers){
     CoachClassPassenger _                         => 650M,
     _                                             => 800M
   };
-  WriteLine($"Flight costs {flightCost:C} for {passenger}");
+  WriteLine($"Flight costs {flighCost:C} for {pass}");
     }
-}
+
+
+ImmutablePerson person = new(){
+  FirstName = "Jeff",
+  LastName = "Sanchez"
+};
+
+// person.FirstName = "jose";
+
+ImmutableVehicle car = new()
+{
+  Brand = "Kia",
+  Color = "Blue",
+  Wheels = 4
+};
+
+ImmutableVehicle repaintedCar = car with {Color = "red"};
+WriteLine($"Original car color was {car.Color}.");
+WriteLine($"New car color is {repaintedCar.Color}.");
+
+
+AnimalClass arc1 = new(){Name="Rex"};
+AnimalClass arc2 = new(){Name="Rex"};
+WriteLine($"arc1 == arc2: {arc1 == arc2}");
+AnimalRecord arr1 = new(){Name="Rex"};
+AnimalRecord arr2 = new(){Name="Rexjfdks"};
+WriteLine($"arc1 == arc2: {arr1 == arr2}");
+
+
+ImmutableAnimal oscar = new("Oscar", "perro");
+var (who,what) = oscar;
+WriteLine($"{who} is a {what}");
+
+HeadSet cp = new ("Nokia", "A10238");
+WriteLine(cp.ProductName, cp.Manufacturer);

@@ -8,12 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PacktLibraryNetStandard2\PacktLibraryNetStandard2.csproj" />
-    <ProjectReference Include="..\PacktLibraryModern\PacktLibraryModern.csproj" />
+    <ProjectReference Include="..\PacktLibrary\PacktLibrary.csproj" />
   </ItemGroup>
 	<ItemGroup>
-		<Using Include="System.Console" Static="true" />
+		<Using Include="System.Console" Static="true"/>
 	</ItemGroup>
-
 
 </Project>
