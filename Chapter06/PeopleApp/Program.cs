@@ -37,3 +37,7 @@ for (int i = 0; i < lamech.Children.Count; i++)
       arg2: lamech.Children[i].Name);
 }
 
+harry.OutputSpouces();
+lamech.OutputSpouces();
+
+

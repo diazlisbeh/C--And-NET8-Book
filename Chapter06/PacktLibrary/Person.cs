@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System.Numerics;
+using System.Security.Cryptography;
 using System.Threading;
 
 namespace Packt.Shared;
@@ -76,6 +77,34 @@ public class Person
     public Person ProcreateWith(Person parther)
     {
         return Procreate(this,parther);
+    }
+    public void OutputSpouces()
+    {
+        if (Married)
+        {
+            string term = Spouses.Count > 1 ? "people" : "person";
+            WriteLine($"{Name} is married with {Spouses.Count} {term}:");
+            foreach(Person spouse in Spouses)
+            {
+                WriteLine($"  {spouse.Name}");
+            }
+
+        }
+        else
+        {
+            WriteLine($"{Name} is a siglenton");
+        }
+    }
+
+    public static bool operator + (Person p1, Person p2)
+    {
+        Marry(p1, p2);
+        return p1.Married && p2.Married;
+    }
+    public static Person operator *(Person p1, Person p2)
+    {
+        return Procreate(p1, p2);
+
     }
     #endregion
 
