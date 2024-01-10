@@ -40,4 +40,10 @@ for (int i = 0; i < lamech.Children.Count; i++)
 harry.OutputSpouces();
 lamech.OutputSpouces();
 
-
+harry.Shout += Harry_Shout;
+harry.Shout += Harry_Stop;
+harry.Poke();
+harry.Poke();
+harry.Poke();
+harry.Poke();
+harry.Poke();

@@ -108,4 +108,21 @@ public class Person
     }
     #endregion
 
+    #region Events
+
+    public event EventHandler? Shout;
+    public int AngryLevel;
+
+    public void Poke()
+    {
+        AngryLevel++;
+        if (AngryLevel < 3) return;
+
+        if(Shout is not null)
+        {
+            Shout(this,EventArgs.Empty);
+        }
+    }
+    #endregion
+
 }
