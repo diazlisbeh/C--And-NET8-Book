@@ -3,7 +3,7 @@ using System.Security.Cryptography;
 using System.Threading;
 
 namespace Packt.Shared;
-public class Person
+public class Person : IComparable<Person>
 {
     #region Properties
 
@@ -122,6 +122,11 @@ public class Person
         {
             Shout(this,EventArgs.Empty);
         }
+    }
+
+    public int CompareTo(Person? other)
+    {
+        throw new NotImplementedException();
     }
     #endregion
 
