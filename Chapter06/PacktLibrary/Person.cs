@@ -126,7 +126,38 @@ public class Person : IComparable<Person>
 
     public int CompareTo(Person? other)
     {
-        throw new NotImplementedException();
+        int position;
+if (other is not null)
+{
+  if ((Name is not null) && (other.Name is not null))
+  {
+    // If both Name values are not null, then
+    // use the string implementation of CompareTo.
+    position = Name.CompareTo(other.Name);
+  }
+  else if ((Name is not null) && (other.Name is null))
+  {
+    position = -1; // this Person precedes other Person.
+  }
+  else if ((Name is null) && (other.Name is not null))
+  {
+    position = 1; // this Person follows other Person.
+  }
+  else
+  {
+    position = 0; // this and other are at same position.
+  }
+}
+else if (other is null)
+{
+  position = -1; // this Person precedes other Person.
+}
+else
+{
+  position = 0; // this and other are at same position.
+}
+return position;
+
     }
     #endregion
 
