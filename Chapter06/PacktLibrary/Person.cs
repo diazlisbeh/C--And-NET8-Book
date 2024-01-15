@@ -160,5 +160,17 @@ return position;
 
     }
     #endregion
-
+    #region Exception
+    public void TimeTravel(DateTime when)
+    {
+        if(when <= Born)
+        {
+            throw new PersonException("Ehhh, no se puede");
+        }
+        else
+        {
+            WriteLine($"Welcome to {when:yyyy}");
+        }
+    }
+    #endregion
 }
