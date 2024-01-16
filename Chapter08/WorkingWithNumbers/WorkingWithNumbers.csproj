@@ -6,16 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
-	<PropertyGroup>
-		 <ArtifactsPath>$(MSBuildThisFileDirectory)artifacts</ArtifactsPath>
-	</PropertyGroup>
-
 	<ItemGroup>
-	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<Using Include="System.Console" Static="true"/>
 	</ItemGroup>
-	<ItemGroup>
-		<Using Include="System.Console" Static="true" />
-	</ItemGroup>
+
 </Project>
-	
