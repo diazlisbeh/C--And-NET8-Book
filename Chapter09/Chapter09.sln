@@ -5,13 +5,17 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithFileSystem", "WorkingWithFileSystem\WorkingWithFileSystem.csproj", "{B13A4430-9D7F-424B-97CD-41CC030BE839}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithStreams", "WorkingWithStreams\WorkingWithStreams.csproj", "{3DC6520D-08A6-4413-9758-FD41BD41655B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithStreams", "WorkingWithStreams\WorkingWithStreams.csproj", "{3DC6520D-08A6-4413-9758-FD41BD41655B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithRandomAccess", "WorkingWithRandomAccess\WorkingWithRandomAccess.csproj", "{1A8814B2-54E9-4C40-B35E-E9C704CBC4B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithRandomAccess", "WorkingWithRandomAccess\WorkingWithRandomAccess.csproj", "{1A8814B2-54E9-4C40-B35E-E9C704CBC4B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithEncodings", "WorkingWithEncodings\WorkingWithEncodings.csproj", "{F009BFDE-8CF4-4F84-A746-DFD3894FC2FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithEncodings", "WorkingWithEncodings\WorkingWithEncodings.csproj", "{F009BFDE-8CF4-4F84-A746-DFD3894FC2FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithSerialization", "WorkingWithSerialization\WorkingWithSerialization.csproj", "{51A37CC8-EAE5-4989-8182-5CF7B2EF0DFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithSerialization", "WorkingWithSerialization\WorkingWithSerialization.csproj", "{51A37CC8-EAE5-4989-8182-5CF7B2EF0DFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControllingJson", "ControllingJson\ControllingJson.csproj", "{5033B0A3-A16A-40A4-ABFC-220B33797448}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithEnvVars", "WorkingWithEnvVars\WorkingWithEnvVars.csproj", "{E328766D-C855-4EAA-B1A0-D746DD82AFFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{51A37CC8-EAE5-4989-8182-5CF7B2EF0DFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51A37CC8-EAE5-4989-8182-5CF7B2EF0DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51A37CC8-EAE5-4989-8182-5CF7B2EF0DFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5033B0A3-A16A-40A4-ABFC-220B33797448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5033B0A3-A16A-40A4-ABFC-220B33797448}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5033B0A3-A16A-40A4-ABFC-220B33797448}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5033B0A3-A16A-40A4-ABFC-220B33797448}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E328766D-C855-4EAA-B1A0-D746DD82AFFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E328766D-C855-4EAA-B1A0-D746DD82AFFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E328766D-C855-4EAA-B1A0-D746DD82AFFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E328766D-C855-4EAA-B1A0-D746DD82AFFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
