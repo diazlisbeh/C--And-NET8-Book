@@ -1,3 +1,5 @@
+using System.Globalization;
+
 partial class Program
 {
     private static void ConfigureConsole(string culture = "en-US",bool useComputerCulture = false)

@@ -15,14 +15,14 @@ public class NorthwindDb : DbContext
         string path = Path.Combine(Environment.CurrentDirectory, databaseFile);
         string connectionString = $"Data Source={path}";
         WriteLine(connectionString);
-        optionsBuilder.UseSqlite(path);
+        optionsBuilder.UseSqlite(connectionString);
         base.OnConfiguring(optionsBuilder);
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Category>()
-            .Property(c => c.Name)
+            .Property(c => c.CategoryName)
             .IsRequired()
             .HasMaxLength(15);
         modelBuilder.Entity<Product>()
