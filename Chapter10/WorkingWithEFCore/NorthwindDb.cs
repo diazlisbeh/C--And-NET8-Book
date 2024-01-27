@@ -1,7 +1,7 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
 using Northwind.EntityModels;
-
+using Microsoft.EntityFrameworkCore.Diagnostics;
 namespace WorkingWithEFCore;
 
 public class NorthwindDb : DbContext
@@ -16,6 +16,12 @@ public class NorthwindDb : DbContext
         string connectionString = $"Data Source={path}";
         WriteLine(connectionString);
         optionsBuilder.UseSqlite(connectionString);
+        optionsBuilder.LogTo(WriteLine,new[]{RelationalEventId.CommandExecuting})
+        #if DEBUG
+            .EnableSensitiveDataLogging()
+            .EnableDetailedErrors()
+        #endif
+        ;
         base.OnConfiguring(optionsBuilder);
     }
 

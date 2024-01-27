@@ -39,7 +39,8 @@ partial class Program
         }
         while (!int.TryParse(input, out minimunStockPrice));        
 
-        IQueryable<Category>? categories = db.Categories?.Include(p => p.Products.Where(p => p.Cost <= minimunStockPrice));
+        IQueryable<Category>? categories = db.Categories?.TagWith("Products filtered by price and sorted")
+            .Include(p => p.Products.Where(p => p.Cost <= minimunStockPrice));
 
         if(categories is null)
         {
@@ -84,10 +85,78 @@ partial class Program
               "{0}: {1} costs {2:$#,##0.00} and has {3} in stock.",
               p.ProductId, p.ProductName, p.Cost, p.Cost);
         }
-
-
-
-
-
     }
+
+    public static void QueringOneProduct()
+    {
+        using NorthwindDb db = new();
+
+        SectionTitle("Queryng one product");
+        int productId;
+        string prompt;
+
+        do{
+            WriteLine("Write the product Id");
+            prompt = ReadLine();
+        }while(!int.TryParse(prompt, out productId));
+
+        Product? product = db.Products?.First(p => p.ProductId == productId);
+        Info($"With First {product.ProductName} was Found");
+        if(product is null){
+            Fail("Not product Found with First");
+        }
+        product = db.Products?.Single(p => p.ProductId == productId);
+        Info($"With Single {product.ProductName} was Found");
+        if(product is null){
+            Fail("Not product Found with Single");
+        }
+    }
+
+    public static void QueryngWithLike()
+    {
+         using NorthwindDb db = new();
+
+        SectionTitle("Queryng with Like");
+        string input = ReadLine();
+
+        if (string.IsNullOrWhiteSpace(input))
+        {
+            Fail("You did not enter part of a product name.");
+            return;
+        }
+        IQueryable<Product>? products = db.Products?
+            .Where(p => EF.Functions.Like(p.ProductName, $"%{input}%"));
+        if (products is null || !products.Any())
+        {
+            Fail("No products found.");
+            return;
+        }
+        foreach (Product p in products)
+        {
+            WriteLine("{0} has {0} units in stock. Discontinued: {0}", 
+                p.ProductName);
+        }
+
+        
+    }
+    private static void GetRandomProduct()
+    {
+        using NorthwindDb db = new();
+        SectionTitle("Get a random product");
+        int? rowCount = db.Products?.Count();
+        if (rowCount is null)
+        {
+            Fail("Products table is empty.");
+            return;
+        }
+        Product? p = db.Products?.FirstOrDefault(
+            p => p.ProductId == (int)(EF.Functions.Random() * rowCount));
+        if (p is null)
+        {
+            Fail("Product not found.");
+            return;
+        }
+        WriteLine($"Random product: {p.ProductId} - {p.ProductName}");
+}
+
 }

@@ -1,6 +1,8 @@
 ﻿using WorkingWithEFCore;
 
 ConfigureConsole();
-QueryingCategories();
+//QueryingCategories();
 //FilteredIncludes();
 //QueryingProducts(); 
+//QueringOneProduct();
+QueryngWithLike();
