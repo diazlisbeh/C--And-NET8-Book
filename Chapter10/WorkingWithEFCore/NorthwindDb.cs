@@ -22,6 +22,7 @@ public class NorthwindDb : DbContext
             .EnableDetailedErrors()
         #endif
         ;
+        optionsBuilder.UseLazyLoadingProxies();
         base.OnConfiguring(optionsBuilder);
     }
 
