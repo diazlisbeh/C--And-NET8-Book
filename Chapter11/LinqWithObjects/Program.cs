@@ -10,3 +10,4 @@ DeferredExecution(names);
 // DeferredExecution(names);
 FilteringUsingWhere(names);
 
+FilteringByType();

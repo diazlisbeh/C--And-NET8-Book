@@ -103,7 +103,7 @@ partial class Program
         }
         while (!int.TryParse(input, out stockPrice));        
 
-        IQueryable<Product> products = db.Products?.Where(p => p.Cost >= stockPrice).OrderByDescending(p => p.Cost);
+        IQueryable<Product> products = db.Products?.AsNoTracking().Where(p => p.Cost >= stockPrice).OrderByDescending(p => p.Cost);
 
         if(products is null)
         {

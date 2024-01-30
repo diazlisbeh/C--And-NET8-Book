@@ -3,7 +3,7 @@
 ConfigureConsole();
 //QueryingCategories();
 //FilteredIncludes();
-//QueryingProducts(); 
+QueryingProducts(); 
 //QueringOneProduct();
 //QueryngWithLike();
 //LazyLoadingWithNoTracking();    
