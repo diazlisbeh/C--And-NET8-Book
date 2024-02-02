@@ -9,11 +9,15 @@
 		<Using Include="System.Console" Static="true" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Version="8.0.0"
-		  Include="Microsoft.EntityFrameworkCore.Sqlite" />
+		<PackageReference Version="8.0.0" Include="Microsoft.EntityFrameworkCore.Sqlite" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\Northwind.EntityModels.Sqlite\Northwind.EntityModels.Sqlite.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Update="Northwind.db">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
 	</ItemGroup>
 
 </Project>

@@ -47,11 +47,12 @@ public partial class NorthwindContext : DbContext
 
             if (dir.EndsWith("net8.0"))
             {
-                path = Path.Combine("..", "..", "..", "..", database);
+                // path = Path.Combine("..", "..", "..", database);
+                path = Path.Combine("..","..","..","..", database);
             }
             else
             {
-                path = Path.Combine("..", database);
+                path = Path.Combine(Directory.GetCurrentDirectory(), database);
             }
             path = Path.GetFullPath(path);
             NorthwindContextLogger.WriteLine($"Database path: {path}");

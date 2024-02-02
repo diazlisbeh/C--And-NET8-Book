@@ -18,7 +18,7 @@ public class UnitTest1
     {
         using NorthwindContext db = new();
         int expected = 8;
-        int actual = db.Products.Count();
+        int actual = db.Categories.Count();
         Assert.Equal(expected,actual);
 
     }
