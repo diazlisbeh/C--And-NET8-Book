@@ -1,8 +1,9 @@
 using Microsoft.AspNetCore.Mvc.Formatters; // To use IOutputFormatter.
 using Northwind.EntityModels; // To use AddNorthwindContext method.
-
+using Microsoft.Extentions.Caching.Memory;
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddSingleton<IMemoryCache>(new MemoryCache(new MemoryCacheOptions()) );
 // Add services to the container.
 builder.Services.AddNorthwindContext();
 
@@ -11,7 +12,7 @@ builder.Services.AddControllers(options =>
     WriteLine("Default output formatters:");
     foreach(IOutputFormatter formatter in options.OutputFormatters)
     {
-        OutputFormatter? mediaFormatter = formatter as OutputFormatter; 
+        OutputFormatter? mediaFormatter = formatter as OutputFormatter;
         if(mediaFormatter is null)
         {
             WriteLine($"  {formatter.GetType().Name}");
