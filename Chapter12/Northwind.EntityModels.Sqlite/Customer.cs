@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Xml.Serialization;
 using Microsoft.EntityFrameworkCore;
 
 namespace Northwind.EntityModels;
@@ -45,7 +46,7 @@ public partial class Customer
 
     [Column(TypeName = "nvarchar (24)")]
     public string? Fax { get; set; }
-
+    [XmlIgnore]
     [InverseProperty("Customer")]
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 }

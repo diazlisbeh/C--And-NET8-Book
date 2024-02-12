@@ -16,12 +16,12 @@ public class CustomerController : ControllerBase
     }
 
     [HttpGet]
-    [ProduceResponseType(200, typeof = typeof(IEnumerable<CustomerController>))]
-    public async Task<IEnumerable<CustomerController>> GetCustomers(string? country)
+    [ProducesResponseType(200, Type = typeof(IEnumerable<CustomerController>))]
+    public async Task<IEnumerable<Customer>> GetCustomers(string? country)
     {
         if (string.IsNullOrWhiteSpace(country))
         {
-            return await _repo.RetrieveAllAsync();
+            return  await _repo.RetrieveAllAsync();
         }
         else{
             return (await _repo.RetrieveAllAsync()).Where(c => c.Country == country);

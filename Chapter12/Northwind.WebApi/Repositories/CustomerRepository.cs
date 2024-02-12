@@ -22,7 +22,7 @@ public class CustomerRepository : ICustomerRepository
     public async Task<Customer?> CreateAsync (Customer c)
     {
         c.CustomerId = c.CustomerId.ToUpper();
-        EntityEntry<Customer> added = await _db.Customer.AddAsync(c);
+        EntityEntry<Customer> added = await _db.Customers.AddAsync(c);
         int affected = await _db.SaveChangesAsync();
         if (affected == 1)
         {
@@ -33,21 +33,21 @@ public class CustomerRepository : ICustomerRepository
     }
     public Task<Customer[]> RetrieveAllAsync()
     {
-        return _db.Customers.ToArrayAsync();.
+        return _db.Customers.ToArrayAsync();
     }
-    public Task<Customer?> RetrieveAsync(string id)
+    public async Task<Customer?> RetrieveAsync(string id)
     {
         id = id.ToUpper();
 
-        if(_memoryCache.TryGetValue(id, out Custome? fromcache))
-            return fromcache;
+        if(_memoryCache.TryGetValue(id, out Customer? fromCache))
+            return await Task.FromResult(fromCache);
 
-        Customer? fromDb = _db.Customer?.FirstOrDefault(c => c.CustomerId == id);
-        if(fromDb is null ) return Task.FromResult(fromDb)
+        Customer? fromDb = _db.Customers?.FirstOrDefault(c => c.CustomerId == id);
+        if (fromDb is null) return await Task.FromResult(fromDb);
 
         _memoryCache.Set(fromDb.CustomerId,fromDb, _cacheEntryOptions);
 
-        return Task.FromResult(fromDb)!;
+        return await Task.FromResult(fromDb)!;
     }
 
     public async Task<Customer?> UpdateAsync(Customer c)
